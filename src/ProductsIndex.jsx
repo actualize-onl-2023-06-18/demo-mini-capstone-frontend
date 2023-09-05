@@ -10,10 +10,9 @@ export function ProductsIndex(props) {
         </div>
         ))}
     </div>
-
   )
 }
 
 
-// accept props from content
-// show those props using a .map to the user
+  // accept props from content
+  // show those props using a .map to the user
