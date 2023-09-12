@@ -4,9 +4,10 @@ export function ProductsIndex(props) {
   return (
     <div>
       <p>Hello from products index</p>
-      {props.products.map(product => (
+      {[].concat(props.products).sort((a,b) => a.price > b.price ? 1 : -1).map(product => (
         <div key={product.id}>
           <p>{product.name}</p>
+          <p>{product.price }</p>
           <a href={`/products/${product.id}`}>Go to show page</a>
           < hr />  
         </div>
