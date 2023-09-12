@@ -15,6 +15,13 @@ export function ProductsShow() {
     })
   }
 
+  const handleAddToCart =  () => {
+    console.log('adding to cart')
+    axios.post("http://localhost:3000/carted_products.json", {quantity: 20, product_id: 3}).then(response => {
+      console.log(response.data)
+    })
+  }
+
   useEffect(handleShowProduct, [])
   
   return (
@@ -28,7 +35,14 @@ export function ProductsShow() {
       <p>is_discounted: {product.is_discounted}</p>
       <p>tax: {product.tax}</p>
       <p>total: {product.total}</p>
-            
+      <form onSubmit={handleAddToCart}>
+        <div>
+          quantity: <input name="quantity" type="number" />
+        </div>
+     
+        <button>Add to cart</button>  
+      </form>
+          
       
       
     </div>
