@@ -1,10 +1,19 @@
+import {useState} from "react"
+
 export function ProductsIndex(props) {
   console.log(props.products)
+  const [sortOrder, setSortOrder] = useState(1)
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder * -1)
+  }
   
   return (
     <div>
-      <p>Hello from products index</p>
-      {[].concat(props.products).sort((a,b) => a.price > b.price ? 1 : -1).map(product => (
+      <p>Hello from products index</p>   
+      <button onClick={toggleSortOrder}>Toggle sort order</button>   
+      {[].concat(props.products)
+      .sort((a, b) => parseInt(a.price, 10) > parseInt(b.price, 10) ? sortOrder : -sortOrder)
+      .map(product => (
         <div key={product.id}>
           <p>{product.name}</p>
           <p>{product.price }</p>
