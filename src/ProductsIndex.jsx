@@ -3,7 +3,7 @@ export function ProductsIndex(props) {
   
   return (
     <div>
-      <p>Hello from photos index</p>
+      <p>Hello from products index</p>
       {props.products.map(product => (
         <div key={product.id}>
           <p>{product.name}</p>

@@ -1,6 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react"
 import { ProductsIndex } from './ProductsIndex'
+import { Login } from './Login'
+import { Signup } from './Signup'
+import { LogoutLink } from './LogoutLink'
+import { Routes, Route } from "react-router-dom";
 
 export function Content() {
   const [products, setProducts] = useState([])  
@@ -18,7 +22,13 @@ export function Content() {
   return (
     <div>
       <h1>Welcome to React!</h1>
-      <ProductsIndex products={products} />
+      <Routes>
+        <Route path="/products" element={<ProductsIndex products={products} />}/>
+        <Route path="/login" element={<Login />}/>
+        <Route path="/signup" element={<Signup />}/>
+        <Route path="/logout" element={<LogoutLink />} />
+      </Routes>
+      
     </div>
   )
 }
