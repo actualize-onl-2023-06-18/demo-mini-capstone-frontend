@@ -13,6 +13,14 @@ export function CartedProductsIndex() {
   }
 
   useEffect(getCartedProducts, [])
+
+  const buy = () => {
+    console.log('buy')
+    axios.post("http://localhost:3000/orders.json").then(response => {
+      console.log(response.data)
+      window.location.href = "/carted_products"
+    })
+  }
   
   return (
     <div>
@@ -25,6 +33,7 @@ export function CartedProductsIndex() {
           < hr />
         </div>
       ))}
+      <button onClick={buy}>Buy</button>
     </div>
   )
 }

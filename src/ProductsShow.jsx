@@ -22,6 +22,7 @@ export function ProductsShow() {
     console.log('adding to cart')
     axios.post("http://localhost:3000/carted_products.json", params).then(response => {
       console.log(response.data)
+      window.location.href = '/carted_products'
     })
   }
 
