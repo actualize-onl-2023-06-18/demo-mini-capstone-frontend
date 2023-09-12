@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react"
 import { ProductsIndex } from './ProductsIndex'
+import { CartedProductsIndex } from './CartedProductsIndex'
 import { Login } from './Login'
 import { Signup } from './Signup'
 import { ProductsShow } from './ProductsShow'
@@ -29,6 +30,7 @@ export function Content() {
         <Route path="/login" element={<Login />}/>
         <Route path="/signup" element={<Signup />}/>
         <Route path="/logout" element={<LogoutLink />} />
+        <Route path="/carted_products" element={<CartedProductsIndex />} />
       </Routes>
       
     </div>
