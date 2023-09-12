@@ -15,9 +15,12 @@ export function ProductsShow() {
     })
   }
 
-  const handleAddToCart =  () => {
+  const handleAddToCart =  (event) => {
+    event.preventDefault()
+    const params = new FormData(event.target);
+
     console.log('adding to cart')
-    axios.post("http://localhost:3000/carted_products.json", {quantity: 20, product_id: 3}).then(response => {
+    axios.post("http://localhost:3000/carted_products.json", params).then(response => {
       console.log(response.data)
     })
   }
@@ -38,6 +41,9 @@ export function ProductsShow() {
       <form onSubmit={handleAddToCart}>
         <div>
           quantity: <input name="quantity" type="number" />
+        </div>
+        <div>
+          <input name="product_id" type="hidden" defaultValue={params.id} />
         </div>
      
         <button>Add to cart</button>  
