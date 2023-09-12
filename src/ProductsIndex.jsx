@@ -16,6 +16,9 @@ export function ProductsIndex(props) {
       .map(product => (
         <div key={product.id}>
           <p>{product.name}</p>
+          {product.images.map(image => (
+            <img src={image.url} width="50px"/>
+          ))}
           <p>{product.price }</p>
           <a href={`/products/${product.id}`}>Go to show page</a>
           < hr />  

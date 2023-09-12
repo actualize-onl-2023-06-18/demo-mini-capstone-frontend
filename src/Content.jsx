@@ -15,7 +15,7 @@ export function Content() {
   const getProducts = () => {
     console.log('hello getting products');
     axios.get("http://localhost:3000/products.json").then(response => {
-      console.log(response.data);
+      // console.log(response.data);
       setProducts(response.data);
     })
   }
