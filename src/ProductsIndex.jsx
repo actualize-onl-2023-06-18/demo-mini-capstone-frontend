@@ -7,6 +7,8 @@ export function ProductsIndex(props) {
       {props.products.map(product => (
         <div key={product.id}>
           <p>{product.name}</p>
+          <a href={`/products/${product.id}`}>Go to show page</a>
+          < hr />  
         </div>
         ))}
     </div>
