@@ -9,7 +9,7 @@ export function ProductsNew() {
     event.preventDefault();    
     const params = new FormData(event.target);
     axios
-      .post("http://localhost:3000/products.json", params)
+      .post("/products.json", params)
       .then((response) => {
         console.log(response.data);
         event.target.reset();
@@ -18,7 +18,7 @@ export function ProductsNew() {
   };
 
   const getSuppliers = () => {
-    axios.get('http://localhost:3000/suppliers.json').then(response => {
+    axios.get('/suppliers.json').then(response => {
       console.log(response.data)
       setSuppliers(response.data)
     })

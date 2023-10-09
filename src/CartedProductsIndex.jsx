@@ -6,7 +6,7 @@ export function CartedProductsIndex() {
 
   const getCartedProducts = () => {
     console.log('getting carted products')
-    axios.get('http://localhost:3000/carted_products.json').then(response => {
+    axios.get('/carted_products.json').then(response => {
       console.log(response.data)
       setCartedProducts(response.data)
     })
@@ -16,7 +16,7 @@ export function CartedProductsIndex() {
 
   const buy = () => {
     console.log('buy')
-    axios.post("http://localhost:3000/orders.json").then(response => {
+    axios.post("/orders.json").then(response => {
       console.log(response.data)
       window.location.href = "/carted_products"
     })
