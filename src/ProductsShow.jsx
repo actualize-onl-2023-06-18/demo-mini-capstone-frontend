@@ -9,7 +9,7 @@ export function ProductsShow() {
 
   const handleShowProduct = () => {
     console.log('handle show product')
-    axios.get(`/products/${params.id}.json`).then(response => {
+    axios.get(`http://localhost:3000/products/${params.id}.json`).then(response => {
       console.log(response.data);
       setProduct(response.data)
     })
@@ -20,7 +20,7 @@ export function ProductsShow() {
     const params = new FormData(event.target);
 
     console.log('adding to cart')
-    axios.post("/carted_products.json", params).then(response => {
+    axios.post("http://localhost:3000/carted_products.json", params).then(response => {
       console.log(response.data)
       window.location.href = '/carted_products'
     })
